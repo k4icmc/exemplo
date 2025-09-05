@@ -71,3 +71,18 @@ Verifique se todas as pastas estão nos lugares certos
 Confira se digitou tudo exatamente igual
 
 O HTML TEM que estar em: home/templates/index.html
+
+
+
+
+
+
+caso feche o vs code e o codigo pare de rodar voce deve fazer:
+
+9. Entra na pasta do projeto primeiro e vai na pasta manage.py:
+entra no terminal e roda:
+cd meuprojeto
+
+
+10. Depois roda:
+python manage.py runserver
