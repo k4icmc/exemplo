@@ -1,0 +1,73 @@
+COMO BOTAR UM HTML PRA RODAR NO DJANGO
+(Até um burro entende!) 🐴
+
+1. INSTALAÇÃO
+Abra o terminal e digite:
+
+bash
+pip install django
+
+
+
+2. CRIAR PROJETO
+bash
+django-admin startproject nomeprojeto
+cd nomeprojeto
+
+
+
+3. CRIAR APP
+bash
+python manage.py startapp home
+
+
+
+4. CONFIGURAR APP
+Abra settings.py e adicione 'home' na lista INSTALLED_APPS
+
+
+
+5. CRIAR VIEW
+Abra home/views.py e cole:
+
+python
+from django.shortcuts import render
+
+def pagina_inicial(request):
+    return render(request, 'index.html')
+
+
+
+6. CONFIGURAR URL
+Abra urls.py (do projeto) e cole:
+
+python
+from home.views import pagina_inicial
+
+urlpatterns = [
+    path('', pagina_inicial, name='home'),
+    path('admin/', admin.site.urls),
+]
+
+
+
+7. COLOCAR SEU HTML
+Crie uma pasta templates DENTRO da pasta home
+
+Coloque seu arquivo HTML lá e renomeie para index.html
+
+
+
+8. RODAR!
+No terminal:
+
+bash
+python manage.py runserver
+ACESSE: http://127.0.0.1:8000
+
+SE DER ERRO:
+Verifique se todas as pastas estão nos lugares certos
+
+Confira se digitou tudo exatamente igual
+
+O HTML TEM que estar em: home/templates/index.html
